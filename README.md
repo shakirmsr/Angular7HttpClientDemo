@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Setting up a Fake REST API
+## Setting up a Fake REST API
 
 To work with HttpClient we need a REST API server, you can either use an external API service, create a real Rest API server or create a fake API using json-server. In this example we'll use the last approach because it's less time consuming.
 
