@@ -12,13 +12,13 @@ To work with HttpClient we need a REST API server, you can either use an externa
 
 So head over to your terminal and start by installing json-server from npm:
 
-$ npm install -g json-server 
+### $ npm install -g json-server 
 
 Next define your data in a db.json file as we provided
 
 Next, you can run a REST server using the following command:
 
-$ json-server --watch db.json 
+### $ json-server --watch db.json 
 
 
 
