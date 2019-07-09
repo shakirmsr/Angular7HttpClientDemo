@@ -30,14 +30,14 @@ export class DataComponent implements OnInit {
   } 
 
   getTransactions() {
-    // this.getData.getAllTransactions().subscribe(
-    //   data => { this.transactionList = data
-    //   console.log(this.transactionList);},
-    //   error => console.log(error)
-    // )
     this.getData.getAllTransactions().subscribe( 
       (data: Transactions[]) => {
-        this.transactionList = data;
+        this.transactionList = data.map(
+          t => {
+            t.cost = 500;
+            return t;
+          }
+      );
       },
       error => {
         console.log(error)
