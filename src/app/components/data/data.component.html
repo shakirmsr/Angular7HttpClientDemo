@@ -1,0 +1,16 @@
+<h2>Getting data</h2>
+<button (click) = "getProducts()">Get products</button>
+<ul>
+  <li *ngFor = "let product of productList">
+    <span>Id: {{product.id}}</span>
+    <span>Product Name: {{product.name}}</span>
+    <span>Product Cost: {{product.cost}}</span>
+  </li>
+</ul>
+<button (click) = "getTransactions()">Get transactions</button>
+<ul>
+  <li *ngFor = "let transaction of transactionList">
+    <span>{{transaction.id}}.</span> 
+    <span>Quantity : {{transaction.quantity}}</span> 
+  </li>
+</ul>
