@@ -6,22 +6,20 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Setting up a Fake REST API
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To work with HttpClient we need a REST API server, you can either use an external API service, create a real Rest API server or create a fake API using json-server. In this example we'll use the last approach because it's less time consuming.
 
-## Build
+So head over to your terminal and start by installing json-server from npm:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### $ npm install -g json-server 
 
-## Running unit tests
+Next define your data in a db.json file as we provided
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Next, you can run a REST server using the following command:
 
-## Running end-to-end tests
+### $ json-server --watch db.json 
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
