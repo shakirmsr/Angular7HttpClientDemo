@@ -6,3 +6,15 @@ ul{
     }
   }
 }
+.locations-list{
+  li{
+    width: 200px;
+    position: relative;
+    .delete{
+      cursor: pointer;
+      position: absolute;
+      right: -30px;
+      top: 10px;
+    }
+  }
+}

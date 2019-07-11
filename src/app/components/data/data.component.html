@@ -1,4 +1,15 @@
 <h2>Getting data</h2>
+<!-- <input type="text" [(ngModel)]="locId" placeholder="id"> -->
+<input type="text" [(ngModel)]="locName" placeholder="Name">
+<button (click) = "addLocation()">Add Location</button>
+<h2>Locations</h2>
+<ul class="locations-list">
+  <li *ngFor = "let location of locations">
+    <span>{{location.id}}.</span> 
+    <span>Name : {{location.name}}</span>
+    <span class="delete" (click) = "deleteLocation(location)">X</span> 
+  </li>
+</ul>
 <button (click) = "getProducts()">Get products</button>
 <ul>
   <li *ngFor = "let product of productList">
@@ -7,6 +18,7 @@
     <span>Product Cost: {{product.cost}}</span>
   </li>
 </ul>
+
 <button (click) = "getTransactions()">Get transactions</button>
 <ul>
   <li *ngFor = "let transaction of transactionList">
@@ -15,3 +27,4 @@
     <span>Cost : {{transaction.cost}}</span> 
   </li>
 </ul>
+
