@@ -1,6 +1,6 @@
 export interface Transactions {
-  id: number,
+  id?: number,
   cost: number,
   quantity: number,
-  productId: number
+  productId?: number
 }

@@ -17,20 +17,22 @@
       "familyId": 2
     },
     {
-      "id": 3,
-      "name": "Product003",
-      "cost": 30,
-      "quantity": 3000,
-      "locationId": 3,
-      "familyId": 2
+      "cost": "1200",
+      "name": "Bag",
+      "quantity": "400",
+      "id": 5
     },
     {
-      "id": 4,
-      "name": "Product004",
-      "cost": 40,
-      "quantity": 4000,
-      "locationId": 2,
-      "familyId": 3
+      "cost": "1230",
+      "name": "Shoes",
+      "quantity": "12",
+      "id": 6
+    },
+    {
+      "cost": "5345",
+      "name": "df",
+      "quantity": "345",
+      "id": 7
     }
   ],
   "locations": [
@@ -43,23 +45,15 @@
       "name": "Location002"
     },
     {
-      "id": 3,
-      "name": "Location003"
-    },
-    {
-      "name": "Kazhakoottam",
-      "id": 4
-    },
-    {
-      "name": "Attingal",
+      "name": "Trivandrum City",
       "id": 5
     },
     {
-      "name": "sdf",
+      "name": "Attingal",
       "id": 6
     },
     {
-      "name": "sddfds",
+      "name": "Kazhakoottam",
       "id": 7
     }
   ],
@@ -91,10 +85,9 @@
       "productId": 2
     },
     {
-      "id": 3,
-      "cost": 15,
-      "quantity": 101,
-      "productId": 3
+      "cost": "1233",
+      "quantity": "12",
+      "id": 3
     }
   ]
 }

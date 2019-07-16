@@ -1,8 +1,8 @@
 export interface Products {
-    id: number,
+    id?: number,
     name: string,
     cost: number,
     quantity: number,
-    locationId : number,
-    familyId : number
+    locationId?: number,
+    familyId ?: number
 }

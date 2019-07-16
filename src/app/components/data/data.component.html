@@ -1,30 +1,68 @@
-<h2>Getting data</h2>
+<h1 class="pb-3">Getting data</h1>
 <!-- <input type="text" [(ngModel)]="locId" placeholder="id"> -->
-<input type="text" [(ngModel)]="locName" placeholder="Name">
-<button (click) = "addLocation()">Add Location</button>
-<h2>Locations</h2>
-<ul class="locations-list">
-  <li *ngFor = "let location of locations">
+
+<h2 class="pb-3">Locations</h2>
+<form [formGroup] = "locationAddForm" class="form-inline" (ngSubmit) = "addLocation(loc.value)">
+  <div class="form-group mb-2">
+    <input required type="text" placeholder="Location Name*" formControlName="location_name" #loc class="form-control mr-3">
+    <button type="submit" class="btn btn-primary">Add new Location</button>
+    <span class="error ml-3" *ngIf = "locationAddFormSubmitted && locationAddForm.controls.location_name.errors?.required">Please enter location name</span>
+  </div>
+</form>
+<div class="alert alert-success" *ngIf = "lSuccess">Location added successfully</div>
+<h4>Locations Listing</h4>
+<ul class="locations-list py-3">
+  <li *ngFor = "let location of locations" class="border-bottom mb-3 pb-2">
     <span>{{location.id}}.</span> 
     <span>Name : {{location.name}}</span>
-    <span class="delete" (click) = "deleteLocation(location)">X</span> 
-  </li>
-</ul>
-<button (click) = "getProducts()">Get products</button>
-<ul>
-  <li *ngFor = "let product of productList">
-    <span>Id: {{product.id}}</span>
-    <span>Product Name: {{product.name}}</span>
-    <span>Product Cost: {{product.cost}}</span>
+    <span class="delete btn btn-danger" (click) = "deleteLocation(location)">Delete</span> 
   </li>
 </ul>
 
-<button (click) = "getTransactions()">Get transactions</button>
+<h2 class="pb-3">Products</h2>
+<form #product_form [formGroup] = "productAddForm" (ngSubmit)="addProducts(p_name.value, p_cost.value, p_quantity.value, product_form)" class="form-inline">
+  
+  <!-- <p class="error" *ngIf = "productAddForm.hasError('required', 'product_name')">Name required</p> -->
+  <div class="form-group mb-3">
+    <input required type="text" formControlName="product_name" placeholder="Product Name*" #p_name class="form-control mr-3">
+    <input required type="number" formControlName="product_cost" placeholder="Product Cost*" step="0.01" #p_cost class="form-control mr-3">
+    <input required type="number" formControlName="product_quantity" placeholder="Product Quantity*" step="0.01" #p_quantity class="form-control mr-3">
+    <input type="submit" value="Add new Product" class="btn btn-primary"/>
+  </div>
+</form>
+<div>
+  <span class="error mr-3" *ngIf = "productAddFormSubmitted && productAddForm.controls.product_name.errors?.required">Name required</span>
+  <span class="error mr-3" *ngIf = "productAddFormSubmitted && productAddForm.controls.product_cost.errors?.required">Cost required</span>
+  <span class="error mr-3" *ngIf = "productAddFormSubmitted && productAddForm.controls.product_quantity.errors?.required">Quantity required</span>
+</div>
+<div class="alert alert-success" *ngIf = "pSuccess">Product added successfully</div>
+<!-- <button (click) = "getProducts()" class="btn btn-primary">Get products</button> -->
+<h4>Products Listing</h4>
+<ul class="py-3">
+  <li *ngFor = "let product of productList" class="border-bottom mb-3 pb-2">
+    <span>Id: {{product.id}}</span>
+    <span>Product Name: {{product.name}}</span>
+    <span>Product Cost: {{product.cost}}</span> 
+    <span class="delete btn btn-danger" (click) = "deleteProduct(product)">Delete</span> 
+  </li>
+</ul>
+
+<!-- <button (click) = "getTransactions()" class="btn btn-primary">Get transactions</button> -->
+<h2 class="pb-3">Transactions</h2>
+<form #transaction_form class="form-inline" (ngSubmit) = "addTransaction(t_cost.value, t_quantity.value, transaction_form )">
+  <div class="form-group mb-3">
+    <input type="text" name="t_cost" #t_cost placeholder="Transaction Cost" class="form-control mr-3">
+    <input type="text" name="t_quantity" #t_quantity placeholder="Transaction Quantity" class="form-control mr-3">
+    <input type="submit" class="btn btn-primary" value="Add Transaction">
+  </div>
+</form>
+<h4>Transactions Listing</h4>
 <ul>
-  <li *ngFor = "let transaction of transactionList">
+  <li *ngFor = "let transaction of transactionList" class="border-bottom mb-3 pb-3">
     <span>{{transaction.id}}.</span> 
     <span>Quantity : {{transaction.quantity}}</span> 
     <span>Cost : {{transaction.cost}}</span> 
+    <span class="delete btn btn-danger" (click) = "deleteTransaction(transaction)">Delete</span> 
   </li>
 </ul>
 

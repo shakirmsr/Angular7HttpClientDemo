@@ -1,4 +1,6 @@
 ul{
+  margin: 0;
+  padding: 0;
   li{
     list-style-type: none;
     span{
@@ -6,15 +8,16 @@ ul{
     }
   }
 }
-.locations-list{
-  li{
-    width: 200px;
-    position: relative;
-    .delete{
-      cursor: pointer;
-      position: absolute;
-      right: -30px;
-      top: 10px;
-    }
+li{
+  width: 350px;
+  position: relative;
+  .delete{
+    cursor: pointer;
+    position: absolute;
+    right: 0px;
+    top: 10px;
   }
+}
+.error{
+  color: #cc2222;
 }
